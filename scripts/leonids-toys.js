@@ -52,11 +52,12 @@ const racetrack = createtoyobj(5, "Race Track", "toy vehicles", `${200.00}`, fal
 
 toys.push(dumptruck, racetrack, buildingBlocks, hotWheels, stuffedAnimals)
 
-
+toyID = 1
 for (const toy of toys) {
-        toy.price = toy.price * 1.05
-        
-        console.log(`The ${toy.name} costs ${toy.price}.`)
+        if(toyID === toy.id){
+            toy.price = toy.price * 1.05
+            console.log(`The ${toy.name} costs ${toy.price}.`)
+        }
     }
     
 
