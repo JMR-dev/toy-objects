@@ -1,8 +1,23 @@
-const toys = []
+toyID = 1
 
-const createtoyobj = (number, toyname, typename, unitprice, stockst, description, toyman) => {
+const toys = []
+/* const toyfactory = (randomtoyOBJ) => {
+    if (toys.length < 1) {
+        randomtoyOBJ.id = 1
+    } else {
+        
+        const lastIndex = toys.length - 1
+        const currentLastToy = toys[lastIndex]
+        const maxId = currentLastToy.id
+        const idForNewToy = maxId + 1
+        randomtoyOBJ.id = idForNewToy  
+    }
+    // console.log(randomtoyOBJ, "This is a generated toy OBJ")
+    toys.push(randomtoyOBJ)
+    } */
+    
+const createtoyobj = (toyname, typename, unitprice, stockst, description, toyman) => {
     const newOBJ = {
-        id: number,
         name: toyname,
         type: typename,
         price: unitprice,
@@ -11,48 +26,30 @@ const createtoyobj = (number, toyname, typename, unitprice, stockst, description
         manufacturer: toyman
 
     }
-    return newOBJ
-
+    if (toys.length < 1) {
+        newOBJ.id = 1
+    } else {
+        
+        const lastIndex = toys.length - 1
+        const currentLastToy = toys[lastIndex]
+        const maxId = currentLastToy.id
+        const idForNewToy = maxId + 1
+        newOBJ.id = idForNewToy  
+    }
+    toys.push(newOBJ)
+    
 }
 
+const buildingBlocks = createtoyobj("building blocks", "construction toy", `${50.00}`, true, "Quality building blocks for inquiring and creative minds", "Hasboro");
+
+const hotWheels = createtoyobj("hot wheels set", "toy vehicles", `${100.00}`, true, "Beautifully painted model cars! Durable and will keep children entertained for hours. (Not for children under the age of 5, small parts/swallowing hazard", "Mattel");
+const stuffedAnimals = createtoyobj("Beanie Babies", "Stuffed Animals", `${15.00}`, false, "Soft, plushy, and cute! Perfect for infants all the way up to 7 years old!", "Beanie Babies");
+
+const dumptruck = createtoyobj("dump truck", "toy vehicles", `${150.00}`, true, "High quality fully aluminum and steel construction!", "Tonka")
+const racetrack = createtoyobj("Race Track", "toy vehicles", `${200.00}`, false, "Fun place for kids to race their hotwheels!", "Neumann")
+console.log(toys)
 
 
-const buildingBlocks = createtoyobj(1, "building blocks", "construction toy", `${50.00}`, true, "Quality building blocks for inquiring and creative minds", "Hasboro");
-const hotWheels = createtoyobj(2, "hot wheels set", "toy vehicles", `${100.00}`, true, "Beautifully painted model cars! Durable and will keep children entertained for hours. (Not for children under the age of 5, small parts/swallowing hazard", "Mattel");
-const stuffedAnimals = createtoyobj(3, "Beanie Babies", "Stuffed Animals", `${15.00}`, false, "Soft, plushy, and cute! Perfect for infants all the way up to 7 years old!", "Beanie Babies");
-
-
-/* for (const toy of toys) {
-    console.log(toys)
-} */
-
-
-/* console.log(buildingBlocks);
-console.log(hotWheels);
-console.log(stuffedAnimals); */
-
-// console.log(buildingBlocks.id);
-
-/* for(const buildingBlock of buildingBlocks) {
-    console.log(buildingBlock.name)
-}
-
-for(const hotWheel of hotWheel) {
-    console.log(hotWheel.name)
-}
-
-for(stuffedAnimal of stuffedAnimals) {
-    console.log(stuffedAnimal.name)
-}
-*/
-
-const dumptruck = createtoyobj(4, "dump truck", "toy vehicles", `${150.00}`, true, "High quality fully aluminum and steel construction!", "Tonka")
-
-const racetrack = createtoyobj(5, "Race Track", "toy vehicles", `${200.00}`, false, "Fun place for kids to race their hotwheels!", "Neumann")
-
-toys.push(dumptruck, racetrack, buildingBlocks, hotWheels, stuffedAnimals)
-
-toyID = 1
 for (const toy of toys) {
         if(toyID === toy.id){
             toy.price = toy.price * 1.05
