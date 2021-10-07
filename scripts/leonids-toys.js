@@ -27,23 +27,35 @@ toys.push(buildingBlocks, hotWheels, stuffedAnimals)
 /* for (const toy of toys) {
     console.log(toys)
 } */
-// I don't think I can access the property as it is buried under a function
+
 
 /* console.log(buildingBlocks);
 console.log(hotWheels);
 console.log(stuffedAnimals); */
+
+// console.log(buildingBlocks.id);
+
+/* for(const buildingBlock of buildingBlocks) {
+    console.log(buildingBlock.name)
+}
+
+for(const hotWheel of hotWheel) {
+    console.log(hotWheel.name)
+}
+
+for(stuffedAnimal of stuffedAnimals) {
+    console.log(stuffedAnimal.name)
+}
+*/
+
+const dumptruck = createtoyobj(4,"dump truck", "toy vehicles", `${150.00}`, true, "High quality fully aluminum and steel construction!", "Tonka")
+
+const racetrack = createtoyobj(5, "Race Track", "toy vehicles", `${200.00}`, false, "Fun place for kids to race their hotwheels!","Neumann" )
+
+toys.push(dumptruck, racetrack)
+
 console.log(toys);
 
-console.log(buildingBlocks.id);
-
-for(const buildingBlocks of buildingBlocks) {
-    console.log(buildingBlocks.name)
-}
-
-for(const hotWheels of hotWheels) {
-    console.log(hotWheels.name)
-}
-
-for(stuffedAnimals of stuffedAnimals) {
-    console.log(stuffedAnimals.name)
+for(const toy of toys){
+    console.log(toy.name)
 }
